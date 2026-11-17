@@ -103,6 +103,9 @@ public class Conta {
      */
     public void transferir(Conta destino, double valor) {
         validarValorPositivo(valor);
+        if (valor > saldo) {
+            throw new IllegalStateException("Saldo insuficiente.");
+        }
         saldo -= valor;
         destino.saldo += valor;
     }
