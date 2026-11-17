@@ -103,6 +103,9 @@ public class Conta {
      */
     public void transferir(Conta destino, double valor) {
         validarValorPositivo(valor);
+        if (!ativa) {
+            throw new IllegalStateException("A conta de origem está encerrada.");
+        }
         if (valor > saldo) {
             throw new IllegalStateException("Saldo insuficiente.");
         }
