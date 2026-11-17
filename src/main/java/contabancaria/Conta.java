@@ -106,6 +106,9 @@ public class Conta {
         if (!ativa) {
             throw new IllegalStateException("A conta de origem está encerrada.");
         }
+        if (!destino.ativa) {
+            throw new IllegalStateException("A conta de destino está encerrada.");
+        }
         if (valor > saldo) {
             throw new IllegalStateException("Saldo insuficiente.");
         }
