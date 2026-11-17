@@ -76,6 +76,9 @@ public class Conta {
      * - O saldo deve ser atualizado corretamente.
      */
     public void sacar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("O valor do saque deve ser maior que zero.");
+        }
         saldo -= valor;
     }
 
