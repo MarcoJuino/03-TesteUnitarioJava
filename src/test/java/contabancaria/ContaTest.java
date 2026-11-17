@@ -181,4 +181,12 @@ class ContaTest {
     // - Conta encerrada tem isAtiva() == false
     // =======================================================
 
+    @Test
+    void encerrar_SaldoZero_DesativaConta() {
+        var conta = new Conta("Maria");
+
+        conta.encerrar();
+
+        assertFalse(conta.isAtiva());
+    }
 }
